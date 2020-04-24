@@ -1,7 +1,7 @@
 pipeline {
    agent {
        docker {
-           image 'qaninja/pywd'
+           image 'ninja/pywd'
        }
    }
 
@@ -15,6 +15,7 @@ pipeline {
       stage('Test') {
          steps {
             sh 'robot -d ./log tests/'
+            robot 'log'
          }
       }
    }
