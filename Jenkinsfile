@@ -15,7 +15,11 @@ pipeline {
       stage('Test') {
          steps {
             sh 'robot -d ./log tests/'
-            robot otherFiles '**/*.png', outputPath: 'log'
+         }
+         post {
+            always{
+               robot otherFiles '**/*.png', outputPath: 'log'
+            }
          }
       }
    }
