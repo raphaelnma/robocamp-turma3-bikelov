@@ -15,7 +15,7 @@ pipeline {
       stage('Test') {
          steps {
             sh 'robot -d ./log tests/'
-            robot 'log'
+            robot otherFiles '**/*.png', outputPath: 'log'
          }
       }
    }
