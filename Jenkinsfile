@@ -1,7 +1,7 @@
 pipeline {
    agent {
        docker {
-           image 'ninja/pywd'
+           image 'raphaelnma/pywd'
        }
    }
 
